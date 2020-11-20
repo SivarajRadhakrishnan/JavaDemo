@@ -1,3 +1,5 @@
+package com.javademo.basics;
+
 /**
  * Created by IntelliJ IDEA.
  * User: sivaraj
