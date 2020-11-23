@@ -18,6 +18,10 @@ public class Car {
     int capacity;
     int engineCC;
 
+    public Car()
+    {
+    }
+
     public Car(String mak, String model, String color, String type, String fuelType)
     {
         make = mak;
@@ -28,12 +32,16 @@ public class Car {
     }
 
     public void print(){
-        System.out.println("---------------");
+        System.out.println("Car: " + make + " " + model);
+        System.out.println("--------------------------");
         System.out.println("Make: " + make);
         System.out.println("Model: " + model);
         System.out.println("Color: " + color);
         System.out.println("Type: " + type);
         System.out.println("FuelType: " + fuelType);
-        System.out.println("---------------");
+        System.out.println("Price: " + price);
+        System.out.println("Capacity: " + capacity);
+        System.out.println("EngineCC: " + engineCC);
+        System.out.println();
     }
 }
