@@ -1,5 +1,8 @@
 package com.javademo.classes;
 
+import com.javademo.basics.FuelType;
+import com.javademo.basics.VehicleType;
+
 /**
  * Created by IntelliJ IDEA.
  * User: sivaraj
@@ -9,12 +12,12 @@ package com.javademo.classes;
  */
 public class ArraysDemo {
     public static void main(String[] args) {
-        Car[] cars = new Car[5];
-        cars[0] = new Car("Hyundai","Santro","Green","HatchBack","Petrol");
-        cars[1] = new Car("Maruti","Suzuki","DarkRed","HatchBack","Petrol");
-        cars[2] = new Car("Toyota","Etios","Ash","Sedan","Diesel");
-        cars[3] = new Car("Ford","Ecosport","DarkGrey","HatchBack","Diesel");
-        cars[4] = new Car("Tata","Nixon","Blue","HatchBack","Gas");
+        Vehicle[] cars = new Vehicle[5];
+        cars[0] = new Vehicle("Hyundai","Santro","Green", VehicleType.CAR, FuelType.PETROL);
+        cars[1] = new Vehicle("Maruti","Suzuki","DarkRed", VehicleType.CAR,FuelType.PETROL);
+        cars[2] = new Vehicle("Toyota","Etios","Ash", VehicleType.CAR,FuelType.DIESEL);
+        cars[3] = new Vehicle("Ford","Ecosport","DarkGrey", VehicleType.CAR,FuelType.DIESEL);
+        cars[4] = new Vehicle("Tata","Nixon","Blue", VehicleType.CAR,FuelType.GAS);
 
         for(int i=0; i<5; i++)
         {

@@ -1,5 +1,7 @@
 package com.javademo.classes;
 
+import com.javademo.basics.*;
+
 /**
  * Created by IntelliJ IDEA.
  * User: sivaraj
@@ -38,11 +40,65 @@ public class ClassesDemo {
 
         }*/
 
-        Car car = new Car("Hyundai","Santro","Blue","HatchBack","Petrol");
-        Car car2 = new Car();
-        Car car3;
+        /*Access Specifiers
+        * private
+        * protected
+        * public
+        * default
+        * */
 
-        car.print();
-        car2.print();
+        Vehicle vehicle = new Vehicle("Hyundai","Santro","Blue", VehicleType.CAR, FuelType.PETROL);
+        Vehicle vehicle2 = new Vehicle();
+        Vehicle vehicle3;
+
+        vehicle.print();
+        vehicle2.print();
+
+        Employee employee = new Employee();
+        employee.id = 123;
+        employee.firstName="Peter";
+        employee.lastName="James";
+        employee.dob="15/09/1980";
+        employee.gender = Gender.MALE;
+        employee.department = Department.QA;
+        employee.designation = Designation.ENGINEER;
+
+        System.out.println(employee.id);
+        System.out.println(employee.firstName);
+        System.out.println(employee.lastName);
+        System.out.println(employee.dob);
+        System.out.println(employee.department);
+        System.out.println(employee.designation);
+
+
+        Employee2 employee2 = new Employee2();
+        employee2.setId(456);
+        employee2.setFirstName("Anita");
+        employee2.setLastName("Kumari");
+        employee2.setDob("22/09/1984");
+        employee2.setGender(Gender.FEMALE);
+        employee2.setDepartment(Department.HR);
+        employee2.setDesignation(Designation.SENIOR_MANAGER);
+
+        System.out.println("--------------------------------------");
+
+        System.out.println(employee2.getId());
+        System.out.println(employee2.getFirstName());
+        System.out.println(employee2.getMiddleName());
+        System.out.println(employee2.getDob());
+        System.out.println(employee2.getGender());
+        System.out.println(employee2.getDepartment());
+        System.out.println(employee2.getDesignation());
+
+
+        Car car = new Car();
+        car.make = "Suzuki";
+        car.model = "Wagonr";
+        car.color = "Gold";
+        car.fuelType = FuelType.PETROL;
+        car.capacity = 4;
+        car.engineCC = 1500;
+
+        car.printCar();
     }
 }

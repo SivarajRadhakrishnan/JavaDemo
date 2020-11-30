@@ -1,5 +1,9 @@
 package com.javademo.classes;
 
+import com.javademo.basics.Department;
+import com.javademo.basics.Designation;
+import com.javademo.basics.Gender;
+
 /**
  * Created by IntelliJ IDEA.
  * User: sivaraj
@@ -8,12 +12,12 @@ package com.javademo.classes;
  * To change this template use File | Settings | File and Code Templates.
  */
 public class Employee {
-    String id;
+    int id;
     String firstName;
     String middleName;
     String lastName;
-    String gender;
+    Gender gender;
     String dob;
-    String department;
-    String designation;
+    Department department;
+    Designation designation;
 }
