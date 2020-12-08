@@ -22,4 +22,10 @@ public class Car extends Vehicle {
         System.out.println("EngineCC: " + engineCC);
         System.out.println();
     }
+
+    public void overrideMethod(){
+        System.out.println("-------------------------------");
+        System.out.println("Car.overrideMethod called..");
+        System.out.println("-------------------------------");
+    }
 }

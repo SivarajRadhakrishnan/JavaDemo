@@ -47,4 +47,10 @@ public class Vehicle {
         System.out.println("EngineCC: " + engineCC);
         System.out.println();
     }
+
+    public void overrideMethod(){
+        System.out.println("-------------------------------");
+        System.out.println("Vehicle.overrideMethod called..");
+        System.out.println("-------------------------------");
+    }
 }

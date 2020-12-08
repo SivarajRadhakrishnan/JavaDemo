@@ -51,6 +51,9 @@ public class ClassesDemo {
         Vehicle vehicle2 = new Vehicle();
         Vehicle vehicle3;
 
+//        Vehicle vehicle4 = new Vehicle("Hyundai","Santro","Blue", VehicleType.CAR);
+//        Vehicle vehicle5 = new Vehicle("Hyundai","Santro","Blue", FuelType.PETROL, VehicleType.CAR);
+
         vehicle.print();
         vehicle2.print();
 
@@ -85,6 +88,7 @@ public class ClassesDemo {
         System.out.println(employee2.getId());
         System.out.println(employee2.getFirstName());
         System.out.println(employee2.getMiddleName());
+        System.out.println(employee2.getLastName());
         System.out.println(employee2.getDob());
         System.out.println(employee2.getGender());
         System.out.println(employee2.getDepartment());
@@ -100,5 +104,12 @@ public class ClassesDemo {
         car.engineCC = 1500;
 
         car.printCar();
+        car.overrideMethod();
+
+        System.out.println("Static value(before setting value) = " + StaticMethodsDemo.value);
+        StaticMethodsDemo.value = 5;
+        StaticMethodsDemo.hi();
+        StaticMethodsDemo.hello();
+        System.out.println("Static value(after setting value) = " + StaticMethodsDemo.value);
     }
 }
