@@ -111,5 +111,8 @@ public class ClassesDemo {
         StaticMethodsDemo.hi();
         StaticMethodsDemo.hello();
         System.out.println("Static value(after setting value) = " + StaticMethodsDemo.value);
+
+
+        Vehicle vehicle5 = new Car();
     }
 }
