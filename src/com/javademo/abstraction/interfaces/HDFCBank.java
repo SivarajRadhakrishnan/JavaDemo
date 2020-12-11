@@ -1,4 +1,4 @@
-package com.javademo.abstraction.bank;
+package com.javademo.abstraction.interfaces;
 
 import java.util.Random;
 
@@ -9,11 +9,11 @@ import java.util.Random;
  * Time: 12:22 PM
  * To change this template use File | Settings | File and Code Templates.
  */
-public class ICICIBank implements Bank {
+public class HDFCBank implements Bank, CreditCard {
     @Override
     public String createAccount(AccountType accountType, Customer customer) {
         String accNo = generateAccNo();
-        System.out.println("\n\nICICI " + accountType + " account successfully created for the customer: " + customer.firstName);
+        System.out.println("\n\nHDFC " + accountType + " account successfully created for the customer: " + customer.firstName);
         System.out.println("Account No: " + accNo + " account successfully created for the customer: " + customer.firstName);
         return accNo;
     }
@@ -36,12 +36,22 @@ public class ICICIBank implements Bank {
     private String generateAccNo()
     {
         Random random = new Random();
-        return "ICICI" + random.nextInt(99999) + "";
+        return random.nextInt(99999999) + "";
     }
 
     private String getBalanceAmount()
     {
         Random random = new Random();
-        return random.nextInt(9999) + "";
+        return random.nextInt(99999) + "";
+    }
+
+    public float get_PL_InterestRate()
+    {
+        return 8.5F;
+    }
+
+    @Override
+    public void issueCard() {
+
     }
 }

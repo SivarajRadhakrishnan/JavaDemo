@@ -1,4 +1,4 @@
-package com.javademo.abstraction.bank;
+package com.javademo.abstraction.interfaces;
 
 /**
  * Created by IntelliJ IDEA.
@@ -7,7 +7,7 @@ package com.javademo.abstraction.bank;
  * Time: 11:52 AM
  * To change this template use File | Settings | File and Code Templates.
  */
-public class AbstractionDemo {
+public class BankAbstractionDemo {
     public static void main(String[] args) {
         BankingOperation bankingOperation = new BankingOperation();
 

@@ -1,4 +1,4 @@
-package com.javademo.abstraction.bank;
+package com.javademo.abstraction.interfaces;
 
 /**
  * Created by IntelliJ IDEA.
