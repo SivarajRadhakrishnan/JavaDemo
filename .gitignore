@@ -25,3 +25,8 @@ hs_err_pid*
 # IntellIJ Idea Files #
 *.idea
 *.iml
+
+# Build and report files
+target/*
+*/target/*
+out/*

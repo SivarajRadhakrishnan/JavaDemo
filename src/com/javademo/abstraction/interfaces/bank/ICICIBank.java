@@ -1,4 +1,4 @@
-package com.javademo.abstraction.interfaces;
+package com.javademo.abstraction.interfaces.bank;
 
 import java.util.Random;
 
