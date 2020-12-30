@@ -1,6 +1,7 @@
 package com.javademo.collections;
 
 import com.javademo.abstraction.interfaces.bank.Customer;
+import com.javademo.basics.Gender;
 
 import java.util.*;
 
@@ -16,6 +17,10 @@ public class CollectionsDemo {
         listDemo();
         mapDemo();
         setDemo();
+
+        listDemoWithObjects();
+        mapDemoWithObjects();
+        setDemoWithObjects();
     }
 
     private static void listDemo()
@@ -25,9 +30,6 @@ public class CollectionsDemo {
         System.out.println("------------------------------------\n");
         List<String> list1 = new ArrayList<String>();
         List<Customer> list2 = new ArrayList<Customer>();
-
-        Map<String, String> map = null;
-        Set<String> set = null;
 
         list1.add("Peter");
         list1.add("James");
@@ -47,8 +49,37 @@ public class CollectionsDemo {
         System.out.println("LastIndex of \"James\" in List1= " + list1.lastIndexOf("James"));
         System.out.println("Is List1 Empty = " + list1.isEmpty());
         System.out.println("Is List2 Empty = " + list2.isEmpty());
+        System.out.println("List1 item at index 4 = " + list1.get(4));
+        list1.remove(4);
+        System.out.println("List1 item at index 4 = " + list1.get(4));
         System.out.println("------------------------------------");
         System.out.println("List Demo End");
+        System.out.println("------------------------------------\n\n");
+    }
+
+    private static void listDemoWithObjects()
+    {
+        System.out.println("------------------------------------");
+        System.out.println("List demo with objects - Start");
+        System.out.println("------------------------------------\n");
+        List<User> list = new ArrayList<User>();
+
+        User user1 = new User(101, "Peter", "Alphones", "09/09/1985", Gender.MALE, Employment.FARMING);
+        User user2 = new User(102, "Julia", "Roberts", "11/12/1970", Gender.FEMALE, Employment.ACTING);
+        User user3 = new User(103, "Alan", "Donald", "15/03/1980", Gender.MALE, Employment.PLAYER);
+        User user4 = new User(104, "Mithali", "Raj", "09/09/1986", Gender.FEMALE, Employment.BUSINESS);
+
+        System.out.println("Is List Empty = " + list.isEmpty());
+        System.out.println("Is List Size = " + list.size());
+        list.add(user1);
+        list.add(user2);
+        list.add(user3);
+        list.add(user4);
+        System.out.println("Is List Empty = " + list.isEmpty());
+        System.out.println("Is List Size = " + list.size());
+        System.out.println("Value at index 2 = " + list.get(2).id + " ," + list.get(2).firstName);
+        System.out.println("------------------------------------");
+        System.out.println("List demo with objects - End");
         System.out.println("------------------------------------\n\n");
     }
 
@@ -84,6 +115,37 @@ public class CollectionsDemo {
         System.out.println("------------------------------------\n\n");
     }
 
+    private static void mapDemoWithObjects()
+    {
+        System.out.println("------------------------------------");
+        System.out.println("Map demo with objects - Start");
+        System.out.println("------------------------------------\n");
+        Map<String, User> employees = new HashMap<String, User>();
+        Map<String, Customer> map2 = new HashMap<String, Customer>();
+
+        User user1 = new User(101, "Peter", "Alphones", "09/09/1985", Gender.MALE, Employment.FARMING);
+        User user2 = new User(102, "Julia", "Roberts", "11/12/1970", Gender.FEMALE, Employment.ACTING);
+        User user3 = new User(103, "Alan", "Donald", "15/03/1980", Gender.MALE, Employment.PLAYER);
+        User user4 = new User(104, "Mithali", "Raj", "09/09/1986", Gender.FEMALE, Employment.BUSINESS);
+
+
+        System.out.println("Employees map size = " + employees.size());
+        System.out.println("Is Employees map empty = " + employees.isEmpty());
+
+        employees.put("101", user1);
+        employees.put("102", user2);
+        employees.put("103", user3);
+        employees.put("104", user4);
+
+        System.out.println("Employees map size = " + employees.size());
+        System.out.println("Is Employees map empty = " + employees.isEmpty());
+        System.out.println("Value with key 103 = " + employees.get("103").id + "," + employees.get("103").firstName);
+
+        System.out.println("------------------------------------");
+        System.out.println("Map demo with objects - End");
+        System.out.println("------------------------------------\n\n");
+    }
+
     private static void setDemo()
     {
         System.out.println("------------------------------------");
@@ -114,6 +176,36 @@ public class CollectionsDemo {
         System.out.println("Size of array extracted from Set1 = " + arr.length);
         System.out.println("------------------------------------");
         System.out.println("Set Demo End");
+        System.out.println("------------------------------------");
+    }
+
+    private static void setDemoWithObjects()
+    {
+        System.out.println("------------------------------------");
+        System.out.println("Set demo with objects - Start");
+        System.out.println("------------------------------------\n");
+        Set<User> set = new HashSet<User>();
+
+
+        User user1 = new User(101, "Peter", "Alphones", "09/09/1985", Gender.MALE, Employment.FARMING);
+        User user2 = new User(102, "Julia", "Roberts", "11/12/1970", Gender.FEMALE, Employment.ACTING);
+        User user3 = new User(103, "Alan", "Donald", "15/03/1980", Gender.MALE, Employment.PLAYER);
+        User user4 = new User(104, "Mithali", "Raj", "09/09/1986", Gender.FEMALE, Employment.BUSINESS);
+
+
+        System.out.println("Employees map size = " + set.size());
+        System.out.println("Is Employees map empty = " + set.isEmpty());
+
+        set.add(user1);
+        set.add(user2);
+        set.add(user3);
+        set.add(user4);
+
+        System.out.println("Employees map size = " + set.size());
+        System.out.println("Is Employees map empty = " + set.isEmpty());
+
+        System.out.println("------------------------------------");
+        System.out.println("Set demo with objects - End");
         System.out.println("------------------------------------");
     }
 }
