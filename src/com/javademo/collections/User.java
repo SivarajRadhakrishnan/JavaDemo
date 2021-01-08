@@ -26,4 +26,8 @@ public class User {
         this.gender = gender;
         this.employment = employment;
     }
+
+    public int getId(){
+        return id;
+    }
 }
