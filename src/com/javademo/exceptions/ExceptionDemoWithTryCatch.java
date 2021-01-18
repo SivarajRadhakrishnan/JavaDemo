@@ -32,6 +32,24 @@ public class ExceptionDemoWithTryCatch {
 
         try
         {
+            readFile2("/opt/softwares/Sample.txt");
+        }catch (FileNotFoundException e)
+        {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }catch (IOException e)
+        {
+            e.printStackTrace();
+        }catch (MyException e)
+        {
+            e.printStackTrace();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        try
+        {
             System.out.println(divide3(3, 0));
         }catch (MyException e)
         {
@@ -79,20 +97,51 @@ public class ExceptionDemoWithTryCatch {
 
     private static void readFile(String filePath)
     {
+        FileReader fr = null;
         try
         {
+            if(filePath.startsWith("/opt/softwares"))
+            {
+                throw new MyException("You can't read file from the location: " + filePath);
+            }
             File file = new File(filePath);
-            FileReader fr = new FileReader(file);
+            fr = new FileReader(file);
             int i;
             while ((i=fr.read()) != -1)
                 System.out.print((char) i);
 
         }catch (FileNotFoundException e)
         {
+            System.out.println(e.getMessage());
             e.printStackTrace();
         }catch (IOException e)
         {
             e.printStackTrace();
+        }catch (MyException e)
+        {
+            e.printStackTrace();
+        }finally {
+            if (fr != null)
+                try{
+                    fr.close();
+                }catch (Exception e)
+                {
+
+                }
+            System.out.println("This is finally block...");
         }
+    }
+
+    private static void readFile2(String filePath)throws FileNotFoundException, IOException, MyException
+    {
+        if(filePath.startsWith("/opt/softwares"))
+        {
+            throw new MyException("You can't read file from the location: " + filePath);
+        }
+        File file = new File(filePath);
+        FileReader fr = new FileReader(file);
+        int i;
+        while ((i=fr.read()) != -1)
+            System.out.print((char) i);
     }
 }
